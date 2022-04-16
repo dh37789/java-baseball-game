@@ -16,10 +16,9 @@ public class NumberGenerateUtils {
 
     public static List<Integer> createUnipueNumberList(int minNumber, int maxNumber, int count) {
         Set<Integer> set = new HashSet<>();
-        while (set.size() < 3) {
+        while (set.size() < count) {
             set.add(createRandomNumber(minNumber, maxNumber));
         }
-
         List<Integer> list = new ArrayList<>(set);
         return list;
     }

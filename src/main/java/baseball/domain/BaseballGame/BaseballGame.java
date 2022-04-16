@@ -17,8 +17,8 @@ public class BaseballGame {
         return status;
     }
 
-    public boolean isComputerReady(GameStatus status) {
-        return status == GameStatus.COMPUTER_READY;
+    public boolean isReady(GameStatus status) {
+        return status == GameStatus.READY;
     }
 
     public boolean isRunning(GameStatus status) {

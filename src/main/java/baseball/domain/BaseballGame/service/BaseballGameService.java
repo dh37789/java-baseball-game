@@ -1,13 +1,22 @@
 package baseball.domain.BaseballGame.service;
 
-import baseball.domain.BaseballGame.BaseballGame;
 import baseball.domain.Computer.Computer;
-import baseball.global.constant.GameStatus;
+import baseball.domain.User.User;
+import baseball.domain.User.service.UserService;
 
 public class BaseballGameService {
-    public BaseballGame createComputerNumber(Computer computer, BaseballGame baseballGame) {
+    private final UserService userService;
+
+    public BaseballGameService() {
+        this.userService = new UserService();
+    }
+
+    public void createComputerNumber(Computer computer) {
         computer.createNumber();
-        baseballGame.setStatus(GameStatus.USER_READY);
-        return baseballGame;
+    }
+
+    public void createUserNumber(User user) {
+        userService.inputUserNumber(user);
+
     }
 }

@@ -18,7 +18,7 @@ public class ComputerTest {
         computer.createNumber();
 
         Number number = computer.getNumber();
-        List<Integer> list = number.numbers;
+        List<Integer> list = number.getNumbers();
 
         assertThat(list.size()).isEqualTo(3);
     }
@@ -31,7 +31,7 @@ public class ComputerTest {
         computer.createNumber();
 
         Number number = computer.getNumber();
-        List<Integer> list = number.numbers;
+        List<Integer> list = number.getNumbers();
 
         assertThat(list.get(0)).isNotEqualTo(list.get(1));
         assertThat(list.get(0)).isNotEqualTo(list.get(2));
