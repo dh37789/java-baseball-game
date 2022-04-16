@@ -26,6 +26,6 @@ public class User {
         for (int i = 0; i < ball.length(); i++) {
             numbers.add(Integer.parseInt(ball.split("")[i]));
         }
-        number.setNumber(numbers);
+        number.setNumberList(numbers);
     }
 }

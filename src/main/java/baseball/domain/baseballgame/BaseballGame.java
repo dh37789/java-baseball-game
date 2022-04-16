@@ -4,9 +4,20 @@ import baseball.global.constant.GameStatus;
 
 public class BaseballGame {
     private GameStatus status;
+    private int ball;
+    private int strike;
 
-    public BaseballGame(GameStatus status) {
-        this.status = status;
+    private static BaseballGame baseballGame = new BaseballGame();
+
+    public static BaseballGame getInstance() {
+        return baseballGame;
+    }
+
+    public BaseballGame initBaseballGame() {
+        this.status = GameStatus.START;
+        this.ball = 0;
+        this.strike = 0;
+        return getInstance();
     }
 
     public void setStatus(GameStatus status) {
@@ -25,4 +36,19 @@ public class BaseballGame {
         return status == GameStatus.RUNNING;
     }
 
+    public void setBall(int ball) {
+        this.ball = ball;
+    }
+
+    public void setStrike(int strike) {
+        this.strike = strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
+
+    public int getStrike() {
+        return strike;
+    }
 }

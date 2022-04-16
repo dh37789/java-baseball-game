@@ -107,10 +107,16 @@ public class UserServiceTest {
 
         userService.inputUserNumber(user);
         Number number = user.getNumber();
-        List<Integer> list = number.getNumbers();
+        List<Integer> list = number.getNumberList();
 
+        assertThatEquals(list);
+    }
+
+    private void assertThatEquals(List<Integer> list) {
         assertThat(list.get(0)).isNotEqualTo("1");
         assertThat(list.get(1)).isNotEqualTo("5");
         assertThat(list.get(2)).isNotEqualTo("9");
     }
+
+
 }

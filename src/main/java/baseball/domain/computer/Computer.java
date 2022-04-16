@@ -23,7 +23,7 @@ public class Computer {
         List<Integer> numbers = NumberGenerateUtils.createUnipueNumberList(
                 NumberConfig.MIN_NUMBER,NumberConfig.MAX_NUMBER, GameConfig.BALL_COUNT
         );
-        number.setNumber(numbers);
+        number.setNumberList(numbers);
     }
 
     public Number getNumber(){

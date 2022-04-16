@@ -13,7 +13,7 @@ public class BaseballGameController {
     private static User user;
 
     public static BaseballGameController init(){
-        baseballGame = new BaseballGame(GameStatus.START);
+        baseballGame = baseballGame.initBaseballGame();
         baseballGameService = new BaseballGameService();
         computer = Computer.getInstance();
         user = User.getInstance();
@@ -22,20 +22,21 @@ public class BaseballGameController {
 
     public void play(){
         do {
-            createComputerNumber(computer);
-            startBaseballGame(user);
+            createComputerNumber();
+            startBaseballGame();
         }while (!baseballGame.isRunning(GameStatus.RUNNING));
     }
 
-    public void createComputerNumber(Computer computer){
+    public void createComputerNumber(){
         baseballGame.setStatus(GameStatus.READY);
         baseballGameService.createComputerNumber(computer);
     }
 
-    private void startBaseballGame(User user) {
+    private void startBaseballGame() {
         baseballGame.setStatus(GameStatus.RUNNING);
         do {
             baseballGameService.createUserNumber(user);
+            baseballGameService.getResult(computer, user);
         } while (!baseballGame.isRunning(GameStatus.RUNNING));
     }
 }
