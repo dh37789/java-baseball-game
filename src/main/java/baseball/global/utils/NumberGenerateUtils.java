@@ -19,7 +19,6 @@ public class NumberGenerateUtils {
         while (set.size() < count) {
             set.add(createRandomNumber(minNumber, maxNumber));
         }
-        List<Integer> list = new ArrayList<>(set);
-        return list;
+        return new ArrayList<>(set);
     }
 }

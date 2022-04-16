@@ -4,6 +4,9 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class ValidateBaseball {
+
+    private ValidateBaseball() {}
+
     private static final Pattern NUMBER = Pattern.compile("[0-9]+");
 
     public static boolean isEmpty(String ball) {
@@ -19,7 +22,7 @@ public class ValidateBaseball {
     }
 
     public static boolean isValidLength(String ball, int count) {
-        return ball.length() == count ? true : false;
+        return ball.length() == count;
     }
 
     public static boolean isDuplicated(String ball) {
@@ -28,6 +31,6 @@ public class ValidateBaseball {
             ballList.add(ball.charAt(i));
         }
         Set<Character> ballSet = new HashSet<>(ballList);
-        return ballList.size() != ballSet.size() ? true : false;
+        return ballList.size() != ballSet.size();
     }
 }

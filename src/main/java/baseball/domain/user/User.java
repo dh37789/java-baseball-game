@@ -1,10 +1,9 @@
-package baseball.domain.User;
+package baseball.domain.user;
 
 import baseball.domain.Number;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class User {
     private Number number;

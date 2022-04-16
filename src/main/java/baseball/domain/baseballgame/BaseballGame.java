@@ -1,4 +1,4 @@
-package baseball.domain.BaseballGame;
+package baseball.domain.baseballgame;
 
 import baseball.global.constant.GameStatus;
 

@@ -1,8 +1,8 @@
 package baseball.domain.service;
 
 import baseball.domain.Number;
-import baseball.domain.User.User;
-import baseball.domain.User.service.UserService;
+import baseball.domain.user.User;
+import baseball.domain.user.service.UserService;
 import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayInputStream;

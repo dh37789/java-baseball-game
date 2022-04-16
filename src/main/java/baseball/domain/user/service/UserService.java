@@ -1,6 +1,6 @@
-package baseball.domain.User.service;
+package baseball.domain.user.service;
 
-import baseball.domain.User.User;
+import baseball.domain.user.User;
 import baseball.global.config.GameConfig;
 import baseball.global.constant.ErrorCode;
 import baseball.global.constant.MessageConfig;

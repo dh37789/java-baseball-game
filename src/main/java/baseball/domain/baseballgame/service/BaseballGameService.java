@@ -1,8 +1,8 @@
-package baseball.domain.BaseballGame.service;
+package baseball.domain.baseballgame.service;
 
-import baseball.domain.Computer.Computer;
-import baseball.domain.User.User;
-import baseball.domain.User.service.UserService;
+import baseball.domain.computer.Computer;
+import baseball.domain.user.User;
+import baseball.domain.user.service.UserService;
 
 public class BaseballGameService {
     private final UserService userService;

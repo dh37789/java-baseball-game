@@ -1,9 +1,9 @@
 package baseball.controller;
 
-import baseball.domain.BaseballGame.BaseballGame;
-import baseball.domain.BaseballGame.service.BaseballGameService;
-import baseball.domain.Computer.Computer;
-import baseball.domain.User.User;
+import baseball.domain.baseballgame.BaseballGame;
+import baseball.domain.baseballgame.service.BaseballGameService;
+import baseball.domain.computer.Computer;
+import baseball.domain.user.User;
 import baseball.global.constant.GameStatus;
 
 public class BaseballGameController {

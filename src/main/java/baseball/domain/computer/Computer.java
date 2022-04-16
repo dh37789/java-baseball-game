@@ -1,4 +1,4 @@
-package baseball.domain.Computer;
+package baseball.domain.computer;
 
 import baseball.domain.Number;
 import baseball.global.config.GameConfig;
