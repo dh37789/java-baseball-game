@@ -13,7 +13,7 @@ public class UserTest {
 
     @Test
     @DisplayName("유저 숫자 저장 테스트")
-    void user_setUserNumber_테스트() {
+    void user_setUserNumber_test() {
         User user = User.getInstance();
         user.setUserNumber("427");
 

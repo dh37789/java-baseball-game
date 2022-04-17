@@ -23,7 +23,7 @@ public class BaseballGameServiceTest extends NsTest {
     
     @Test
     @DisplayName("같은 위치의 볼 체크 테스트")
-    void isSameBall_테스트(){
+    void isSameBall_test(){
         Number computerNumber = initNumbers("157");
         Number userNumber = initNumbers("167");
 
@@ -39,7 +39,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("숫자 포함여부 테스트")
-    void isContainBall_테스트(){
+    void isContainBall_test(){
         Number computerNumber = initNumbers("157");
         Number userNumber = initNumbers("715");
 
@@ -55,7 +55,7 @@ public class BaseballGameServiceTest extends NsTest {
     
     @Test
     @DisplayName("ball count 계산 테스트")
-    void insertBallCount_테스트() {
+    void insertBallCount_test() {
         BaseballGame baseballGame = BaseballGame.getInstance();
         Number computerNumber = initNumbers("157");
         Number userNumber = initNumbers("715");
@@ -68,7 +68,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("Strike count 계산 테스트")
-    void insertStrikeCount_테스트() {
+    void insertStrikeCount_test() {
         BaseballGame baseballGame = BaseballGame.getInstance();
         Number computerNumber = initNumbers("326");
         Number userNumber = initNumbers("396");
@@ -81,7 +81,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("3Strike 테스트")
-    void calcResult_threeStrike_테스트() {
+    void calcResult_threeStrike_test() {
         BaseballGame baseballGame = BaseballGame.getInstance();
         baseballGame.setStrike(3);
         baseballGame.setBall(0);
@@ -96,7 +96,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("3Strike 테스트")
-    void calcResult_Nothig_테스트() {
+    void calcResult_Nothig_test() {
         BaseballGame baseballGame = BaseballGame.getInstance();
         baseballGame.setStrike(0);
         baseballGame.setBall(0);
@@ -110,7 +110,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("calcResult 테스트")
-    void calcResult_테스트() {
+    void calcResult_test() {
         BaseballGame baseballGame = BaseballGame.getInstance();
         baseballGame.setStrike(1);
         baseballGame.setBall(2);
@@ -124,7 +124,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("restart 공백 예외 테스트")
-    void restart_NOT_INPUT_exception_테스트() {
+    void restart_NOT_INPUT_exception_test() {
         BaseballGameService gameService = new BaseballGameService();
 
         String input = "";
@@ -138,7 +138,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("restart 1과 2외의 값 입력시 예외 테스트1")
-    void restart_NOT_INVALID_SELECT_exception_테스트() {
+    void restart_NOT_INVALID_SELECT_exception_test1() {
         BaseballGameService gameService = new BaseballGameService();
 
         String input = "3";
@@ -152,7 +152,7 @@ public class BaseballGameServiceTest extends NsTest {
 
     @Test
     @DisplayName("restart 1과 2외의 값 입력시 예외 테스트2")
-    void restart_NOT_INVALID_SELECT_exception_테스트2() {
+    void restart_NOT_INVALID_SELECT_exception_test2() {
         BaseballGameService gameService = new BaseballGameService();
 
         String input = "12";

@@ -17,7 +17,7 @@ public class UserServiceTest {
     @Test
     @Order(1)
     @DisplayName("빈값 입력 예외 테스트")
-    void user_NOT_INPUT_exception_테스트() {
+    void user_NOT_INPUT_exception_test() {
         UserService userService = new UserService();
         User user = User.getInstance();
 
@@ -33,7 +33,7 @@ public class UserServiceTest {
     @Test
     @Order(2)
     @DisplayName("유저 글자입력시 예외 테스트")
-    void user_INVALID_NUMBER_exception_테스트() {
+    void user_INVALID_NUMBER_exception_test() {
         UserService userService = new UserService();
         User user = User.getInstance();
 
@@ -49,7 +49,7 @@ public class UserServiceTest {
     @Test
     @Order(3)
     @DisplayName("0 입력 예외 테스트")
-    void user_INPUT_ZERO_exception_테스트() {
+    void user_INPUT_ZERO_exception_test() {
         UserService userService = new UserService();
         User user = User.getInstance();
 
@@ -65,7 +65,7 @@ public class UserServiceTest {
     @Test
     @Order(4)
     @DisplayName("유저 입력값 글자수 테스트")
-    void user_INVALID_LENGTH_exception_테스트() {
+    void user_INVALID_LENGTH_exception_test() {
         UserService userService = new UserService();
         User user = User.getInstance();
 
@@ -81,7 +81,7 @@ public class UserServiceTest {
     @Test
     @Order(5)
     @DisplayName("유저 입력값 중복 체크 테스트")
-    void user_INPUT_DUPLICATE_exception_테스트() {
+    void user_INPUT_DUPLICATE_exception_test() {
         UserService userService = new UserService();
         User user = User.getInstance();
 
@@ -97,7 +97,7 @@ public class UserServiceTest {
     @Test
     @Order(6)
     @DisplayName("유저 입력값 체크 테스트")
-    void user_number_check_테스트() {
+    void user_number_check_test() {
         UserService userService = new UserService();
         User user = User.getInstance();
 

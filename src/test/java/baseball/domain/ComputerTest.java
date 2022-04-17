@@ -13,7 +13,7 @@ public class ComputerTest {
 
     @Test
     @DisplayName("컴퓨터 3자리 숫자생성 테스트")
-    void computer_number_create_테스트() {
+    void computer_number_create_test() {
         Computer computer = Computer.getInstance();
 
         computer.createNumber();
@@ -26,7 +26,7 @@ public class ComputerTest {
 
     @Test
     @DisplayName("컴퓨터 중복안되는 숫자 생성 테스트")
-    void computer_number_unipue_테스트() {
+    void computer_number_unipue_test() {
         Computer computer = Computer.getInstance();
 
         computer.createNumber();
