@@ -30,7 +30,6 @@ public class BaseballGameController {
     }
 
     public void createComputerNumber(){
-        baseballGame.setStatus(GameStatus.READY);
         baseballGameService.createComputerNumber(computer);
     }
 

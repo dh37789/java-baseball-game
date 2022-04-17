@@ -84,7 +84,7 @@ public class BaseballGameService {
 
     public void calcResult() {
         if (isEndGame(baseballGame.getStrike())){
-            System.out.print(baseballGame.getStrike() + "스트라이크");
+            System.out.println(baseballGame.getStrike() + "스트라이크");
             System.out.println(MessageConfig.GAME_WIN);
             baseballGame.setStatus(GameStatus.END);
             return;
