@@ -95,7 +95,7 @@ public class BaseballGameServiceTest extends NsTest {
     }
 
     @Test
-    @DisplayName("3Strike 테스트")
+    @DisplayName("nothing 테스트")
     void calcResult_Nothig_test() {
         BaseballGame baseballGame = BaseballGame.getInstance();
         baseballGame.setStrike(0);
