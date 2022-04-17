@@ -1,12 +1,13 @@
 package baseball.domain;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 import baseball.domain.user.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class UserTest {
 

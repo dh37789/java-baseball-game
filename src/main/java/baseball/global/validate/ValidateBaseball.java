@@ -9,20 +9,12 @@ public class ValidateBaseball {
 
     private static final Pattern NUMBER = Pattern.compile("[0-9]+");
 
-    public static boolean isEmpty(String ball) {
-        return ball.isEmpty();
-    }
-
     public static boolean isNumber(String ball) {
         return NUMBER.matcher(ball).matches();
     }
 
     public static boolean isContainZero(String ball) {
         return ball.contains("0");
-    }
-
-    public static boolean isValidLength(String ball, int count) {
-        return ball.length() == count;
     }
 
     public static boolean isDuplicated(String ball) {

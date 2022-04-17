@@ -5,6 +5,7 @@ import baseball.domain.baseballgame.service.BaseballGameService;
 import baseball.domain.computer.Computer;
 import baseball.domain.user.User;
 import baseball.global.constant.GameStatus;
+import baseball.global.constant.MessageConfig;
 
 public class BaseballGameController {
     private static BaseballGame baseballGame;
@@ -13,7 +14,8 @@ public class BaseballGameController {
     private static User user;
 
     public static BaseballGameController init(){
-        baseballGame = baseballGame.initBaseballGame();
+        baseballGame = BaseballGame.getInstance();
+        BaseballGame.init();
         baseballGameService = new BaseballGameService();
         computer = Computer.getInstance();
         user = User.getInstance();
@@ -37,6 +39,16 @@ public class BaseballGameController {
         do {
             baseballGameService.createUserNumber(user);
             baseballGameService.getResult(computer, user);
-        } while (!baseballGame.isRunning(GameStatus.RUNNING));
+        } while (baseballGame.isRunning(baseballGame.getStatus()));
+        restartBaseballGame();
+    }
+
+    private void restartBaseballGame() {
+        System.out.println(MessageConfig.RESTART_REQUEST);
+        baseballGameService.restartBaseballGame();
+
+        if (baseballGame.isStart(baseballGame.getStatus())){
+            play();
+        }
     }
 }

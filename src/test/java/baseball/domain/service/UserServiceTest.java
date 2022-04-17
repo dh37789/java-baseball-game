@@ -1,5 +1,7 @@
 package baseball.domain.service;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 import baseball.domain.Number;
 import baseball.domain.user.User;
 import baseball.domain.user.service.UserService;
@@ -9,8 +11,6 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class UserServiceTest {
 

@@ -6,16 +6,17 @@ import baseball.global.constant.ErrorCode;
 import baseball.global.constant.MessageConfig;
 import baseball.global.utils.ConsoleUtils;
 import baseball.global.validate.ValidateBaseball;
+import baseball.global.validate.ValidateCommon;
 
 public class UserService {
     public void inputUserNumber(User user) {
         System.out.print(MessageConfig.PLEASE_INPUT_NUMBER);
         String ball = ConsoleUtils.inputDate();
-        isValidateBall(ball);
+        validateBall(ball);
         user.setUserNumber(ball);
     }
 
-    private void isValidateBall(String ball) {
+    private void validateBall(String ball) {
         isBallBlank(ball);
         isBallNumber(ball);
         isBallThreeLength(ball);
@@ -24,7 +25,7 @@ public class UserService {
     }
 
     private void isBallBlank(String ball) {
-        if (ValidateBaseball.isEmpty(ball)) {
+        if (ValidateCommon.isEmpty(ball)) {
             throw new IllegalArgumentException(ErrorCode.NOT_INPUT.getMessage());
         }
     }
@@ -36,14 +37,14 @@ public class UserService {
     }
 
     private void isBallThreeLength(String ball) {
-        if (!ValidateBaseball.isValidLength(ball, GameConfig.BALL_COUNT)) {
-            throw new IllegalArgumentException(ErrorCode.INPUT_ZERO.getMessage());
+        if (!ValidateCommon.isValidLength(ball, GameConfig.BALL_COUNT)) {
+            throw new IllegalArgumentException(ErrorCode.INVALID_LENGTH.getMessage());
         }
     }
 
     private void isBallContainZero(String ball) {
         if (ValidateBaseball.isContainZero(ball)) {
-            throw new IllegalArgumentException(ErrorCode.INVALID_LENGTH.getMessage());
+            throw new IllegalArgumentException(ErrorCode.INPUT_ZERO.getMessage());
         }
     }
 

@@ -1,17 +1,25 @@
 package baseball.domain.service;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+import baseball.Application;
 import baseball.domain.Number;
 import baseball.domain.baseballgame.BaseballGame;
 import baseball.domain.baseballgame.service.BaseballGameService;
+import baseball.global.constant.GameStatus;
+import camp.nextstep.edu.missionutils.test.NsTest;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class BaseballGameServiceTest {
+public class BaseballGameServiceTest extends NsTest {
     
     @Test
     @DisplayName("같은 위치의 볼 체크 테스트")
@@ -71,6 +79,91 @@ public class BaseballGameServiceTest {
         assertThat(baseballGame.getStrike()).isEqualTo(2);
     }
 
+    @Test
+    @DisplayName("3Strike 테스트")
+    void calcResult_threeStrike_테스트() {
+        BaseballGame baseballGame = BaseballGame.getInstance();
+        baseballGame.setStrike(3);
+        baseballGame.setBall(0);
+
+        BaseballGameService gameService = new BaseballGameService();
+
+        gameService.calcResult();
+
+        assertThat(baseballGame.getStatus()).isEqualTo(GameStatus.END);
+        assertThat(output()).contains("3스트라이크", "게임 종료");
+    }
+
+    @Test
+    @DisplayName("3Strike 테스트")
+    void calcResult_Nothig_테스트() {
+        BaseballGame baseballGame = BaseballGame.getInstance();
+        baseballGame.setStrike(0);
+        baseballGame.setBall(0);
+
+        BaseballGameService gameService = new BaseballGameService();
+
+        gameService.calcResult();
+
+        assertThat(output()).contains("낫싱");
+    }
+
+    @Test
+    @DisplayName("calcResult 테스트")
+    void calcResult_테스트() {
+        BaseballGame baseballGame = BaseballGame.getInstance();
+        baseballGame.setStrike(1);
+        baseballGame.setBall(2);
+
+        BaseballGameService gameService = new BaseballGameService();
+
+        gameService.calcResult();
+
+        assertThat(output()).contains("2볼 1스트라이크");
+    }
+
+    @Test
+    @DisplayName("restart 공백 예외 테스트")
+    void restart_NOT_INPUT_exception_테스트() {
+        BaseballGameService gameService = new BaseballGameService();
+
+        String input = "";
+        InputStream in = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+        System.setIn(in);
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            gameService.restartBaseballGame();
+        });
+    }
+
+    @Test
+    @DisplayName("restart 1과 2외의 값 입력시 예외 테스트1")
+    void restart_NOT_INVALID_SELECT_exception_테스트() {
+        BaseballGameService gameService = new BaseballGameService();
+
+        String input = "3";
+        InputStream in = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+        System.setIn(in);
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            gameService.restartBaseballGame();
+        });
+    }
+
+    @Test
+    @DisplayName("restart 1과 2외의 값 입력시 예외 테스트2")
+    void restart_NOT_INVALID_SELECT_exception_테스트2() {
+        BaseballGameService gameService = new BaseballGameService();
+
+        String input = "12";
+        InputStream in = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+        System.setIn(in);
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            gameService.restartBaseballGame();
+        });
+    }
+
     private Number initNumbers(String numberString) {
         Number number = new Number();
         List<Integer> numbers = new ArrayList<>();
@@ -79,5 +172,10 @@ public class BaseballGameServiceTest {
         }
         number.setNumberList(numbers);
         return number;
+    }
+
+    @Override
+    protected void runMain() {
+        Application.main(new String[]{});
     }
 }

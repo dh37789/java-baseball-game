@@ -3,9 +3,9 @@ package baseball.domain.baseballgame;
 import baseball.global.constant.GameStatus;
 
 public class BaseballGame {
-    private GameStatus status;
-    private int ball;
-    private int strike;
+    private static GameStatus status;
+    private static int ball;
+    private static int strike;
 
     private static BaseballGame baseballGame = new BaseballGame();
 
@@ -13,11 +13,10 @@ public class BaseballGame {
         return baseballGame;
     }
 
-    public BaseballGame initBaseballGame() {
-        this.status = GameStatus.START;
-        this.ball = 0;
-        this.strike = 0;
-        return getInstance();
+    public static void init() {
+        status = GameStatus.START;
+        ball = 0;
+        strike = 0;
     }
 
     public void setStatus(GameStatus status) {
@@ -28,8 +27,8 @@ public class BaseballGame {
         return status;
     }
 
-    public boolean isReady(GameStatus status) {
-        return status == GameStatus.READY;
+    public boolean isStart(GameStatus status) {
+        return status == GameStatus.START;
     }
 
     public boolean isRunning(GameStatus status) {

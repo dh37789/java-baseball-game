@@ -5,7 +5,8 @@ public enum ErrorCode {
     INVALID_NUMBER("숫자만 입력해 주세요."),
     INPUT_ZERO("0외에 다른 숫자를 입력해 주세요."),
     INVALID_LENGTH("입력된 값의 숫자가 3자리가 아닙니다."),
-    INPUT_DUPLICATE("중복된 값이 입력되었습니다.");
+    INPUT_DUPLICATE("중복된 값이 입력되었습니다."),
+    NOT_INVALID_SELECT("1과 2중 하나의 값만 입력해 주세요.");
 
     private String message;
 
